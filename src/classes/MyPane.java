@@ -5,14 +5,13 @@ import java.awt.*;
 import java.awt.event.MouseListener;
 
 public class MyPane extends JPanel {
-    private JLabel cLabel = new JLabel("Center");
+    private JLabel cLabel = new JLabel("Center",SwingConstants.CENTER);
     private JLabel wLabel = new JLabel("West");
     private JLabel sLabel = new JLabel("South");
     private JLabel nLabel = new JLabel("North");
     private JLabel eLabel = new JLabel("East");
-    private BorderLayout bl = new BorderLayout();
     public MyPane() {
-        setLayout(bl);
+        setLayout(new BorderLayout());
         nLabel.setBorder(BorderFactory.createLineBorder(Color.BLUE,20));
         sLabel.setBorder(BorderFactory.createLineBorder(Color.ORANGE,20));
         wLabel.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY,20));
@@ -22,7 +21,7 @@ public class MyPane extends JPanel {
         add(sLabel, BorderLayout.SOUTH);
         add(wLabel, BorderLayout.WEST);
         add(eLabel, BorderLayout.EAST);
-        add(cLabel, BorderLayout.CENTER);
+        add(cLabel);
         nLabel.addMouseListener(new MouseEvent(1));
         sLabel.addMouseListener(new MouseEvent(2));
         wLabel.addMouseListener(new MouseEvent(3));
@@ -59,7 +58,7 @@ public class MyPane extends JPanel {
                     JOptionPane.showMessageDialog(null, "Добро пожаловать в ВАО", "", JOptionPane.PLAIN_MESSAGE);
                     break;
                 case 5:
-                    JOptionPane.showMessageDialog(null, "Добро пожаловать в ЦАО", "Окно", JOptionPane.YES_OPTION);
+                    JOptionPane.showMessageDialog(null, "Добро пожаловать в ЦАО", "Окно", JOptionPane.PLAIN_MESSAGE);
                     break;
                 default:
                     break;
